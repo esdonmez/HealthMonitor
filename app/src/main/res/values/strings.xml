@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HealthMonitor</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="notregistered">Still don\'t have an account?</string>
+    <string name="healthmonitor">Health Monitor</string>
+    <string name="healthrecords">Health Records</string>
+    <string name="activities">Activities</string>
+    <string name="monitor">Health Monitor</string>
+</resources>

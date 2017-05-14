@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.esdonmez.esd.healthmonitor.MainActivity">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="bottom"
+        android:baselineAligned="false"
+        android:background="@color/colorAccent">
+
+        <LinearLayout
+            android:id="@+id/monitorButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/healthmonitor"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="2dp"
+                android:scaleType="centerInside"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/healthmonitor"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:textColor="@color/text"
+                android:layout_weight="2.5"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activitiesButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/activities"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="2dp"
+                android:scaleType="centerInside"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/activities"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:textColor="@color/text"
+                android:layout_weight="2.5"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recordsButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/healthrecords"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="2dp"
+                android:scaleType="centerInside"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/healthrecords"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:textColor="@color/text"
+                android:layout_weight="2.5"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
