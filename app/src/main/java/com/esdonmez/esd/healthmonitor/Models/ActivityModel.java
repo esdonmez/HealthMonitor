@@ -4,23 +4,25 @@ public class ActivityModel {
 
     private int ActivityId;
     private int BodyPartId;
-    private int UserId;
+    private UserModel User;
     private String Type;
     private String Name;
     private String StartingTime;
-    private int Duration;
+    private double Duration;
     private int CalorieEffect;
+    private int EnergyEffect;
 
 
-    public ActivityModel(int activityId, int bodyPartId, int userId, String type, String name, String startingTime, int duration, int calorieEffect) {
+    public ActivityModel(int activityId, int bodyPartId, UserModel user, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
         ActivityId = activityId;
         BodyPartId = bodyPartId;
-        UserId = userId;
+        User = user;
         Type = type;
         Name = name;
         StartingTime = startingTime;
         Duration = duration;
         CalorieEffect = calorieEffect;
+        EnergyEffect = energyEffect;
     }
 
 
@@ -28,6 +30,12 @@ public class ActivityModel {
 
     }
 
+
+    public int changeCalorie(int totalCalorie, int calorieEffect) {
+        totalCalorie = totalCalorie - calorieEffect;
+
+        return totalCalorie;
+    }
 
     public int getActivityId() {
         return ActivityId;
@@ -45,12 +53,12 @@ public class ActivityModel {
         BodyPartId = bodyPartId;
     }
 
-    public int getUserId() {
-        return UserId;
+    public UserModel getUser() {
+        return User;
     }
 
-    public void setUserId(int userId) {
-        UserId = userId;
+    public void setUser(UserModel user) {
+        User = user;
     }
 
     public String getType() {
@@ -77,11 +85,11 @@ public class ActivityModel {
         StartingTime = startingTime;
     }
 
-    public int getDuration() {
+    public double getDuration() {
         return Duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(double duration) {
         Duration = duration;
     }
 
@@ -91,5 +99,13 @@ public class ActivityModel {
 
     public void setCalorieEffect(int calorieEffect) {
         CalorieEffect = calorieEffect;
+    }
+
+    public int getEnergyEffect() {
+        return EnergyEffect;
+    }
+
+    public void setEnergyEffect(int energyEffect) {
+        EnergyEffect = energyEffect;
     }
 }
