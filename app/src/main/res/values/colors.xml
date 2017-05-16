@@ -6,4 +6,9 @@
     <color name="barSelected">#12b2a0</color>
     <color name="barBackground">#e04f5f</color>
     <color name="text">#ffffff</color>
+    <color name="priceBarText">#ecf0f1</color>
+    <color name="barText">#ecf0f1</color>
+    <color name="lightGrayBar">#fbfbfb</color>
+    <color name="darkGrayBar">#cac9cf</color>
+    <color name="itemBackground">#ffffff</color>
 </resources>
