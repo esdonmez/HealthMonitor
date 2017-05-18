@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(nameText != null && emailText != null && passwordText != null)
                 {
-                    UserModel user = new UserModel(0, nameText.toString(), emailText.toString(), passwordText.toString());
+                    UserModel user = new UserModel(nameText.toString(), emailText.toString(), passwordText.toString());
 
                     MainActivity.user = user;
                     Intent i = new Intent(RegisterActivity.this, MainActivity.class);

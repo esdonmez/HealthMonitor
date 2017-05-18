@@ -1,12 +1,13 @@
 package com.esdonmez.esd.healthmonitor.Models;
 
+import java.util.List;
+
 public class RegularActivityModel extends ActivityModel {
 
 
-    public RegularActivityModel(int activityId, int bodyPartId, UserModel user, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
-        super(activityId, bodyPartId, user, type, name, startingTime, duration, calorieEffect, energyEffect);
+    public RegularActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
+        super(bodyParts, type, name, startingTime, duration, calorieEffect, energyEffect);
     }
-
 
     public RegularActivityModel() {
     }

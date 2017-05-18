@@ -2,16 +2,12 @@ package com.esdonmez.esd.healthmonitor.Models;
 
 public class BodyPartModel {
 
-    private int BodyPartId;
-    private int UserId;
     private String HealthStatus;
     private int HealthValue;
     private String BodyPartName;
 
 
-    public BodyPartModel(int bodyPartId, int userId, String healthStatus, int healthValue, String bodyPartName) {
-        BodyPartId = bodyPartId;
-        UserId = userId;
+    public BodyPartModel(String healthStatus, int healthValue, String bodyPartName) {
         HealthStatus = healthStatus;
         HealthValue = healthValue;
         BodyPartName = bodyPartName;
@@ -22,22 +18,6 @@ public class BodyPartModel {
 
     }
 
-
-    public int getBodyPartId() {
-        return BodyPartId;
-    }
-
-    public void setBodyPartId(int bodyPartId) {
-        BodyPartId = bodyPartId;
-    }
-
-    public int getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(int userId) {
-        UserId = userId;
-    }
 
     public String getHealthStatus() {
         return HealthStatus;

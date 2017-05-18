@@ -7,14 +7,20 @@ import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
 
+import com.esdonmez.esd.healthmonitor.Models.BodyPartModel;
 import com.esdonmez.esd.healthmonitor.Models.UserModel;
 import com.esdonmez.esd.healthmonitor.Views.ActivityView;
 import com.esdonmez.esd.healthmonitor.Views.MonitorView;
 import com.esdonmez.esd.healthmonitor.Views.RecordsView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     public static UserModel user;
+    public static List<BodyPartModel> bodyPartList = new ArrayList<BodyPartModel>();
+    List<String> bodyParts = new ArrayList<String>();
     LinearLayout monitorButton, activitiesButton, recordsButton;
     int index;
     MonitorView monitorView;
@@ -49,6 +55,25 @@ public class MainActivity extends AppCompatActivity {
 
         monitorView = new MonitorView();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, monitorView).commit();
+
+        if(bodyParts != null) bodyParts.clear();
+
+        bodyParts.add("Leg");
+        bodyParts.add("Heart");
+        bodyParts.add("Arm");
+        bodyParts.add("Brain");
+        bodyParts.add("Eye");
+
+        if(bodyPartList != null) bodyPartList.clear();
+
+        for(int i = 0; i < 5; i++)
+        {
+            BodyPartModel bodyPartModel = new BodyPartModel();
+            bodyPartModel.setBodyPartName(bodyParts.get(i));
+            bodyPartModel.setHealthStatus("Healthy");
+            bodyPartModel.setHealthValue(100);
+            bodyPartList.add(bodyPartModel);
+        }
     }
 
     private View.OnClickListener bottomBarListener = new View.OnClickListener()

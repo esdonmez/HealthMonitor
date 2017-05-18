@@ -1,17 +1,15 @@
 package com.esdonmez.esd.healthmonitor.Models;
 
+import java.util.List;
+
 public class UserFeaturesModel {
 
-    private int UserFeaturesId;
-    private int UserId;
     private int EnergyLevel;
     private String HealthStatus;
     private int TotalCalorie;
 
 
-    public UserFeaturesModel(int userFeaturesId, int userId, int energyLevel, String healthStatus, int totalCalorie) {
-        UserFeaturesId = userFeaturesId;
-        UserId = userId;
+    public UserFeaturesModel(int energyLevel, String healthStatus, int totalCalorie) {
         EnergyLevel = energyLevel;
         HealthStatus = healthStatus;
         TotalCalorie = totalCalorie;
@@ -22,22 +20,6 @@ public class UserFeaturesModel {
 
     }
 
-
-    public int getUserFeaturesId() {
-        return UserFeaturesId;
-    }
-
-    public void setUserFeaturesId(int userFeaturesId) {
-        UserFeaturesId = userFeaturesId;
-    }
-
-    public int getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(int userId) {
-        UserId = userId;
-    }
 
     public int getEnergyLevel() {
         return EnergyLevel;

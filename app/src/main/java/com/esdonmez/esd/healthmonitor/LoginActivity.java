@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(emailText != null && passwordText != null)
                 {
-                    UserModel user = new UserModel(0, emailText.toString().split("\\@")[0], emailText.toString(), passwordText.toString());
+                    UserModel user = new UserModel(emailText.toString().split("\\@")[0], emailText.toString(), passwordText.toString());
 
                     MainActivity.user = user;
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);

@@ -1,10 +1,11 @@
 package com.esdonmez.esd.healthmonitor.Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ActivityModel {
 
-    private int ActivityId;
-    private int BodyPartId;
-    private UserModel User;
+    private List<BodyPartModel> BodyParts;
     private String Type;
     private String Name;
     private String StartingTime;
@@ -13,10 +14,8 @@ public class ActivityModel {
     private int EnergyEffect;
 
 
-    public ActivityModel(int activityId, int bodyPartId, UserModel user, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
-        ActivityId = activityId;
-        BodyPartId = bodyPartId;
-        User = user;
+    public ActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
+        BodyParts = bodyParts;
         Type = type;
         Name = name;
         StartingTime = startingTime;
@@ -31,34 +30,105 @@ public class ActivityModel {
     }
 
 
+    public List<String> BodyParts(String activity) {
+        List<String> bodyParts = new ArrayList<String>();
+        if(activity.toLowerCase().equals("jogging") || activity.toLowerCase().equals("cycling") || activity.toLowerCase().equals("football"))
+        {
+            bodyParts.add("Leg");
+            bodyParts.add("Heart");
+            bodyParts.add("Arm");
+            return bodyParts;
+        }
+
+        else if(activity.toLowerCase().equals("attending a course") || activity.toLowerCase().equals("going to cinema") || activity.toLowerCase().equals("listenin to music"))
+        {
+            bodyParts.add("Eye");
+            bodyParts.add("Brain");
+            return bodyParts;
+        }
+
+        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        {
+            bodyParts.add("Leg");
+            bodyParts.add("Heart");
+            bodyParts.add("Arm");
+            bodyParts.add("Eye");
+            bodyParts.add("Brain");
+            return bodyParts;
+        }
+
+        return bodyParts;
+    }
+
+    public int findEnergyEffect(String activity) {
+        if(activity.toLowerCase().equals("jogging") || activity.toLowerCase().equals("cycling") || activity.toLowerCase().equals("football"))
+        {
+            return -5;
+        }
+
+        else if(activity.toLowerCase().equals("attending a course") || activity.toLowerCase().equals("going to cinema") || activity.toLowerCase().equals("listenin to music"))
+        {
+            return -1;
+        }
+
+        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        {
+            return +3;
+        }
+
+        return 0;
+    }
+
+    public int findCalorieEffect(String activity) {
+        if(activity.toLowerCase().equals("jogging") || activity.toLowerCase().equals("cycling") || activity.toLowerCase().equals("football"))
+        {
+            return -5;
+        }
+
+        else if(activity.toLowerCase().equals("attending a course") || activity.toLowerCase().equals("going to cinema") || activity.toLowerCase().equals("listenin to music"))
+        {
+            return -1;
+        }
+
+        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        {
+            return +2;
+        }
+
+        return 0;
+    }
+
+    public String findType(String activity) {
+        if(activity.toLowerCase().equals("jogging") || activity.toLowerCase().equals("cycling") || activity.toLowerCase().equals("football"))
+        {
+            return "physical";
+        }
+
+        else if(activity.toLowerCase().equals("attending a course") || activity.toLowerCase().equals("going to cinema") || activity.toLowerCase().equals("listenin to music"))
+        {
+            return "nonphysical";
+        }
+
+        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        {
+            return "regular";
+        }
+
+        return "undefined";
+    }
+
     public int changeCalorie(int totalCalorie, int calorieEffect) {
         totalCalorie = totalCalorie - calorieEffect;
 
         return totalCalorie;
     }
 
-    public int getActivityId() {
-        return ActivityId;
+    public List<BodyPartModel> getBodyParts() {
+        return BodyParts;
     }
 
-    public void setActivityId(int activityId) {
-        ActivityId = activityId;
-    }
-
-    public int getBodyPartId() {
-        return BodyPartId;
-    }
-
-    public void setBodyPartId(int bodyPartId) {
-        BodyPartId = bodyPartId;
-    }
-
-    public UserModel getUser() {
-        return User;
-    }
-
-    public void setUser(UserModel user) {
-        User = user;
+    public void setBodyParts(List<BodyPartModel> bodyParts) {
+        BodyParts = bodyParts;
     }
 
     public String getType() {

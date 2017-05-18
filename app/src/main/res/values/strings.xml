@@ -10,4 +10,17 @@
     <string name="healthrecords">Health Records</string>
     <string name="activities">Activities</string>
     <string name="monitor">Health Monitor</string>
+    <string name="add">Add</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string-array name="activities">
+        <item>Jogging</item>
+        <item>Cycling</item>
+        <item>Football</item>
+        <item>Attending a course</item>
+        <item>Going to cinema</item>
+        <item>Listenin to music</item>
+        <item>Eating</item>
+        <item>Sleeping</item>
+    </string-array>
 </resources>

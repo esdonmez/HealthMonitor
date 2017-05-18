@@ -1,15 +1,17 @@
 package com.esdonmez.esd.healthmonitor.Models;
 
+import java.util.List;
+
 public class NonPhysicalActivityModel extends ActivityModel {
 
 
-    public NonPhysicalActivityModel(int activityId, int bodyPartId, UserModel user, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
-        super(activityId, bodyPartId, user, type, name, startingTime, duration, calorieEffect, energyEffect);
+    public NonPhysicalActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
+        super(bodyParts, type, name, startingTime, duration, calorieEffect, energyEffect);
     }
-
 
     public NonPhysicalActivityModel() {
     }
+
 
     public int changeEnergy(int totalEnergy, double duration, int energyEffect) {
         totalEnergy = (int) (totalEnergy - (duration*energyEffect*100));
