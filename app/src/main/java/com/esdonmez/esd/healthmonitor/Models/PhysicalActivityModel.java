@@ -14,7 +14,7 @@ public class PhysicalActivityModel extends ActivityModel {
 
 
     public int changeEnergy(int totalEnergy, int energyEffect) {
-        totalEnergy = (int) (totalEnergy + energyEffect);
+        totalEnergy = (int) (totalEnergy - energyEffect);
 
         return totalEnergy;
     }
@@ -36,8 +36,8 @@ public class PhysicalActivityModel extends ActivityModel {
         return healthStatus;
     }
 
-    public int changeHealthValue (int healthValue, double duration, int energyEffect) {
-        healthValue = (int) (healthValue - duration * energyEffect);
+    public int changeHealthValue (int healthValue, int energyEffect) {
+        healthValue = (int) (healthValue - energyEffect);
         return healthValue;
     }
 }

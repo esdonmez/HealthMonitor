@@ -110,8 +110,16 @@ public class AddActivityView extends Fragment {
 
                         for(int i = 0; i < bodyPartList.size(); i++)
                         {
-                            bodyPartList.get(i).setHealthValue(physicalActivityModel.changeHealthValue(bodyPartList.get(i).getHealthValue(), activityModel.getDuration(), activityModel.getEnergyEffect()));
+                            bodyPartList.get(i).setHealthValue(physicalActivityModel.changeHealthValue(bodyPartList.get(i).getHealthValue(), activityModel.getEnergyEffect()));
                             bodyPartList.get(i).setHealthStatus(physicalActivityModel.changeHealth(bodyPartList.get(i).getHealthValue()));
+                            for(int j = 0; j < MainActivity.bodyPartList.size(); j++)
+                            {
+                                if(MainActivity.bodyPartList.get(j).getBodyPartName().equals(bodyPartList.get(i).getBodyPartName()))
+                                {
+                                    MainActivity.bodyPartList.get(j).setHealthValue(bodyPartList.get(i).getHealthValue());
+                                    MainActivity.bodyPartList.get(j).setHealthStatus(bodyPartList.get(i).getHealthStatus());
+                                }
+                            }
                         }
                     }
                     else if(activityModel.getType().equals("nonphysical"))
@@ -122,8 +130,16 @@ public class AddActivityView extends Fragment {
 
                         for(int i = 0; i < bodyPartList.size(); i++)
                         {
-                            bodyPartList.get(i).setHealthValue(nonPhysicalActivityModel.changeHealthValue(bodyPartList.get(i).getHealthValue(), activityModel.getDuration(), activityModel.getEnergyEffect()));
+                            bodyPartList.get(i).setHealthValue(nonPhysicalActivityModel.changeHealthValue(bodyPartList.get(i).getHealthValue(), activityModel.getEnergyEffect()));
                             bodyPartList.get(i).setHealthStatus(nonPhysicalActivityModel.changeHealth(bodyPartList.get(i).getHealthValue()));
+                            for(int j = 0; j < MainActivity.bodyPartList.size(); j++)
+                            {
+                                if(MainActivity.bodyPartList.get(j).getBodyPartName().equals(bodyPartList.get(i).getBodyPartName()))
+                                {
+                                    MainActivity.bodyPartList.get(j).setHealthValue(bodyPartList.get(i).getHealthValue());
+                                    MainActivity.bodyPartList.get(j).setHealthStatus(bodyPartList.get(i).getHealthStatus());
+                                }
+                            }
                         }
                     }
                     else if(activityModel.getType().equals("regular"))
@@ -134,8 +150,16 @@ public class AddActivityView extends Fragment {
 
                         for(int i = 0; i < bodyPartList.size(); i++)
                         {
-                            bodyPartList.get(i).setHealthValue(regularActivityModel.changeHealthValue(bodyPartList.get(i).getHealthValue(), activityModel.getDuration(), activityModel.getEnergyEffect()));
+                            bodyPartList.get(i).setHealthValue(regularActivityModel.changeHealthValue(bodyPartList.get(i).getHealthValue(), activityModel.getEnergyEffect()));
                             bodyPartList.get(i).setHealthStatus(regularActivityModel.changeHealth(bodyPartList.get(i).getHealthValue()));
+                            for(int j = 0; j < MainActivity.bodyPartList.size(); j++)
+                            {
+                                if(MainActivity.bodyPartList.get(j).getBodyPartName().equals(bodyPartList.get(i).getBodyPartName()))
+                                {
+                                    MainActivity.bodyPartList.get(j).setHealthValue(bodyPartList.get(i).getHealthValue());
+                                    MainActivity.bodyPartList.get(j).setHealthStatus(bodyPartList.get(i).getHealthStatus());
+                                }
+                            }
                         }
                     }
 

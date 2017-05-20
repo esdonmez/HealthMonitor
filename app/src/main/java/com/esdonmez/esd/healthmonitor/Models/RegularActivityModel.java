@@ -36,8 +36,8 @@ public class RegularActivityModel extends ActivityModel {
         return healthStatus;
     }
 
-    public int changeHealthValue (int healthValue, double duration, int energyEffect) {
-        healthValue = (int) (healthValue + duration * energyEffect);
+    public int changeHealthValue (int healthValue, int energyEffect) {
+        healthValue = (int) (healthValue + energyEffect);
         return healthValue;
     }
 }

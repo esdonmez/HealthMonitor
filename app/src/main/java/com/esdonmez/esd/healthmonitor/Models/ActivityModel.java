@@ -47,7 +47,7 @@ public class ActivityModel {
             return bodyParts;
         }
 
-        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        else if(activity.toLowerCase().equals("eating") || activity.toLowerCase().equals("sleeping"))
         {
             bodyParts.add("Legs");
             bodyParts.add("Heart");
@@ -63,17 +63,17 @@ public class ActivityModel {
     public int findEnergyEffect(String activity) {
         if(activity.toLowerCase().equals("jogging") || activity.toLowerCase().equals("cycling") || activity.toLowerCase().equals("football"))
         {
-            return -5;
+            return 2;
         }
 
         else if(activity.toLowerCase().equals("attending a course") || activity.toLowerCase().equals("going to cinema") || activity.toLowerCase().equals("listenin to music"))
         {
-            return -1;
+            return 1;
         }
 
-        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        else if(activity.toLowerCase().equals("eating") || activity.toLowerCase().equals("sleeping"))
         {
-            return +3;
+            return 1;
         }
 
         return 0;
@@ -90,7 +90,7 @@ public class ActivityModel {
             return -1;
         }
 
-        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        else if(activity.toLowerCase().equals("eating") || activity.toLowerCase().equals("sleeping"))
         {
             return +2;
         }

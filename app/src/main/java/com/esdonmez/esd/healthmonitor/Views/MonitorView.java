@@ -44,34 +44,34 @@ public class MonitorView extends Fragment {
         legs = (TextView) view.findViewById(R.id.legs);
 
         progressBar.setProgress(MainActivity.userFeaturesModel.getEnergyLevel());
-        energyText.setText("Energy : " + MainActivity.userFeaturesModel.getEnergyLevel());
+        energyText.setText("" + MainActivity.userFeaturesModel.getEnergyLevel());
         for(int i = 0; i < MainActivity.bodyPartList.size(); i++)
         {
             int color = MainActivity.bodyPartList.get(i).findColor(MainActivity.bodyPartList.get(i).getHealthStatus());
 
             if(MainActivity.bodyPartList.get(i).getBodyPartName().equals("Brain"))
             {
-                brain.setText("Brain : " + MainActivity.bodyPartList.get(i).getHealthStatus());
+                brain.setText(MainActivity.bodyPartList.get(i).getHealthStatus());
                 brain.setTextColor(getResources().getColor(color));
             }
             else if(MainActivity.bodyPartList.get(i).getBodyPartName().equals("Eyes"))
             {
-                eyes.setText("Eyes : " + MainActivity.bodyPartList.get(i).getHealthStatus());
+                eyes.setText(MainActivity.bodyPartList.get(i).getHealthStatus());
                 eyes.setTextColor(getResources().getColor(color));
             }
             else if(MainActivity.bodyPartList.get(i).getBodyPartName().equals("Heart"))
             {
-                heart.setText("Heart : " + MainActivity.bodyPartList.get(i).getHealthStatus());
+                heart.setText(MainActivity.bodyPartList.get(i).getHealthStatus());
                 heart.setTextColor(getResources().getColor(color));
             }
             else if(MainActivity.bodyPartList.get(i).getBodyPartName().equals("Arms"))
             {
-                arms.setText("Arms : " + MainActivity.bodyPartList.get(i).getHealthStatus());
+                arms.setText(MainActivity.bodyPartList.get(i).getHealthStatus());
                 arms.setTextColor(getResources().getColor(color));
             }
             else if(MainActivity.bodyPartList.get(i).getBodyPartName().equals("Legs"))
             {
-                legs.setText("Legs : " + MainActivity.bodyPartList.get(i).getHealthStatus());
+                legs.setText(MainActivity.bodyPartList.get(i).getHealthStatus());
                 legs.setTextColor(getResources().getColor(color));
             }
         }
