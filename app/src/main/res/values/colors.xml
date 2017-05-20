@@ -11,4 +11,9 @@
     <color name="lightGrayBar">#fbfbfb</color>
     <color name="darkGrayBar">#cac9cf</color>
     <color name="itemBackground">#ffffff</color>
+    <color name="healthy">#02ce2a</color>
+    <color name="good">#b3ff00</color>
+    <color name="moderate">#faf200</color>
+    <color name="tired">#ffa32b</color>
+    <color name="extremelyTired">#ff0a02</color>
 </resources>

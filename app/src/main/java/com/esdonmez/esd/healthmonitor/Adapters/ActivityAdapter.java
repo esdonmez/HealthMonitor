@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.esdonmez.esd.healthmonitor.Models.ActivityModel;
 import com.esdonmez.esd.healthmonitor.R;
+
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class ActivityAdapter extends BaseAdapter {
@@ -52,7 +54,7 @@ public class ActivityAdapter extends BaseAdapter {
         {
             ((TextView) view.findViewById(R.id.activityNameType)).setText(activityList.get(position).getName() + " - " + activityList.get(position).getType());
             ((TextView) view.findViewById(R.id.calorieEffect)).setText("Calorie Effect : " + activityList.get(position).getCalorieEffect() + " cal");
-            ((TextView) view.findViewById(R.id.activityDuration)).setText("Duration : " + activityList.get(position).getDuration() + " min");
+            ((TextView) view.findViewById(R.id.activityDuration)).setText("Duration : " + String.format("%.2f", activityList.get(position).getDuration()) + " min");
         }
 
         return view;

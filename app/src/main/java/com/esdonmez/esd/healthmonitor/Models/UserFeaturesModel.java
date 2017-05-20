@@ -6,13 +6,13 @@ public class UserFeaturesModel {
 
     private int EnergyLevel;
     private String HealthStatus;
-    private int TotalCalorie;
+    private int TotalCalorieChange;
 
 
-    public UserFeaturesModel(int energyLevel, String healthStatus, int totalCalorie) {
+    public UserFeaturesModel(int energyLevel, String healthStatus, int totalCalorieChange) {
         EnergyLevel = energyLevel;
         HealthStatus = healthStatus;
-        TotalCalorie = totalCalorie;
+        TotalCalorieChange = totalCalorieChange;
     }
 
 
@@ -37,11 +37,11 @@ public class UserFeaturesModel {
         HealthStatus = healthStatus;
     }
 
-    public int getTotalCalorie() {
-        return TotalCalorie;
+    public int getTotalCalorieChange() {
+        return TotalCalorieChange;
     }
 
-    public void setTotalCalorie(int totalCalorie) {
-        TotalCalorie = totalCalorie;
+    public void setTotalCalorie(int totalCalorieChange) {
+        TotalCalorieChange = totalCalorieChange;
     }
 }

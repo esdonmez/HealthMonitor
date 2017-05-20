@@ -1,5 +1,7 @@
 package com.esdonmez.esd.healthmonitor.Models;
 
+import com.esdonmez.esd.healthmonitor.R;
+
 public class BodyPartModel {
 
     private String HealthStatus;
@@ -16,6 +18,34 @@ public class BodyPartModel {
 
     public BodyPartModel() {
 
+    }
+
+
+    public int findColor(String healthStatus) {
+        int color = 0;
+
+        if(healthStatus.equals("Healthy"))
+        {
+            color = R.color.healthy;
+        }
+        else if(healthStatus.equals("Good"))
+        {
+            color = R.color.good;
+        }
+        else if(healthStatus.equals("Moderate"))
+        {
+            color = R.color.moderate;
+        }
+        else if(healthStatus.equals("Tired"))
+        {
+            color = R.color.tired;
+        }
+        else if(healthStatus.equals("Extremely Tired"))
+        {
+            color = R.color.extremelyTired;
+        }
+
+        return color;
     }
 
 

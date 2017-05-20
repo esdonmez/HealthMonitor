@@ -8,10 +8,10 @@ import android.view.Window;
 import android.widget.LinearLayout;
 
 import com.esdonmez.esd.healthmonitor.Models.BodyPartModel;
+import com.esdonmez.esd.healthmonitor.Models.UserFeaturesModel;
 import com.esdonmez.esd.healthmonitor.Models.UserModel;
 import com.esdonmez.esd.healthmonitor.Views.ActivityView;
 import com.esdonmez.esd.healthmonitor.Views.MonitorView;
-import com.esdonmez.esd.healthmonitor.Views.RecordsView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +19,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static UserModel user;
+    public static UserFeaturesModel userFeaturesModel;
     public static List<BodyPartModel> bodyPartList = new ArrayList<BodyPartModel>();
     List<String> bodyParts = new ArrayList<String>();
-    LinearLayout monitorButton, activitiesButton, recordsButton;
+    LinearLayout monitorButton, activitiesButton;
     int index;
     MonitorView monitorView;
     ActivityView activityView;
-    RecordsView recordsView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,30 +39,32 @@ public class MainActivity extends AppCompatActivity {
 
         monitorButton.setOnClickListener(bottomBarListener);
         activitiesButton.setOnClickListener(bottomBarListener);
-        recordsButton.setOnClickListener(bottomBarListener);
     }
 
     private void Initialize()
     {
         monitorButton = (LinearLayout) findViewById(R.id.monitorButton);
         activitiesButton = (LinearLayout) findViewById(R.id.activitiesButton);
-        recordsButton = (LinearLayout) findViewById(R.id.recordsButton);
 
         index = 0;
         monitorButton.setBackgroundColor(getResources().getColor(R.color.barSelected));
         activitiesButton.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-        recordsButton.setBackgroundColor(getResources().getColor(R.color.colorAccent));
 
         monitorView = new MonitorView();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, monitorView).commit();
 
+        userFeaturesModel = new UserFeaturesModel();
+        userFeaturesModel.setEnergyLevel(100);
+        userFeaturesModel.setHealthStatus("Healthy");
+        userFeaturesModel.setTotalCalorie(0);
+
         if(bodyParts != null) bodyParts.clear();
 
-        bodyParts.add("Leg");
+        bodyParts.add("Legs");
         bodyParts.add("Heart");
-        bodyParts.add("Arm");
+        bodyParts.add("Arms");
         bodyParts.add("Brain");
-        bodyParts.add("Eye");
+        bodyParts.add("Eyes");
 
         if(bodyPartList != null) bodyPartList.clear();
 
@@ -84,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 monitorButton.setBackgroundColor(getResources().getColor(R.color.barSelected));
                 activitiesButton.setBackgroundColor(getResources().getColor(R.color.barBackground));
-                recordsButton.setBackgroundColor(getResources().getColor(R.color.barBackground));
                 index = 0;
                 monitorView = new MonitorView();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, monitorView).commit();
@@ -94,20 +95,9 @@ public class MainActivity extends AppCompatActivity {
             {
                 monitorButton.setBackgroundColor(getResources().getColor(R.color.barBackground));
                 activitiesButton.setBackgroundColor(getResources().getColor(R.color.barSelected));
-                recordsButton.setBackgroundColor(getResources().getColor(R.color.barBackground));
                 index = 1;
                 activityView = new ActivityView();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, activityView).commit();
-            }
-
-            else if(v.getId() == R.id.recordsButton && index != 2)
-            {
-                monitorButton.setBackgroundColor(getResources().getColor(R.color.barBackground));
-                activitiesButton.setBackgroundColor(getResources().getColor(R.color.barBackground));
-                recordsButton.setBackgroundColor(getResources().getColor(R.color.barSelected));
-                index = 2;
-                recordsView = new RecordsView();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment, recordsView).commit();
             }
         }
     };

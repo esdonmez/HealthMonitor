@@ -9,12 +9,12 @@ public class ActivityModel {
     private String Type;
     private String Name;
     private String StartingTime;
-    private double Duration;
+    private float Duration;
     private int CalorieEffect;
     private int EnergyEffect;
 
 
-    public ActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
+    public ActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, float duration, int calorieEffect, int energyEffect) {
         BodyParts = bodyParts;
         Type = type;
         Name = name;
@@ -34,25 +34,25 @@ public class ActivityModel {
         List<String> bodyParts = new ArrayList<String>();
         if(activity.toLowerCase().equals("jogging") || activity.toLowerCase().equals("cycling") || activity.toLowerCase().equals("football"))
         {
-            bodyParts.add("Leg");
+            bodyParts.add("Legs");
             bodyParts.add("Heart");
-            bodyParts.add("Arm");
+            bodyParts.add("Arms");
             return bodyParts;
         }
 
         else if(activity.toLowerCase().equals("attending a course") || activity.toLowerCase().equals("going to cinema") || activity.toLowerCase().equals("listenin to music"))
         {
-            bodyParts.add("Eye");
+            bodyParts.add("Eyes");
             bodyParts.add("Brain");
             return bodyParts;
         }
 
         else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
         {
-            bodyParts.add("Leg");
+            bodyParts.add("Legs");
             bodyParts.add("Heart");
-            bodyParts.add("Arm");
-            bodyParts.add("Eye");
+            bodyParts.add("Arms");
+            bodyParts.add("Eyes");
             bodyParts.add("Brain");
             return bodyParts;
         }
@@ -109,7 +109,7 @@ public class ActivityModel {
             return "nonphysical";
         }
 
-        else if(activity.toLowerCase().equals("eating") && activity.toLowerCase().equals("sleeping"))
+        else if(activity.toLowerCase().trim().equals("eating") || activity.toLowerCase().trim().equals("sleeping"))
         {
             return "regular";
         }
@@ -117,11 +117,6 @@ public class ActivityModel {
         return "undefined";
     }
 
-    public int changeCalorie(int totalCalorie, int calorieEffect) {
-        totalCalorie = totalCalorie - calorieEffect;
-
-        return totalCalorie;
-    }
 
     public List<BodyPartModel> getBodyParts() {
         return BodyParts;
@@ -155,11 +150,11 @@ public class ActivityModel {
         StartingTime = startingTime;
     }
 
-    public double getDuration() {
+    public float getDuration() {
         return Duration;
     }
 
-    public void setDuration(double duration) {
+    public void setDuration(float duration) {
         Duration = duration;
     }
 

@@ -5,7 +5,7 @@ import java.util.List;
 public class PhysicalActivityModel extends ActivityModel {
 
 
-    public PhysicalActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, double duration, int calorieEffect, int energyEffect) {
+    public PhysicalActivityModel(List<BodyPartModel> bodyParts, String type, String name, String startingTime, float duration, int calorieEffect, int energyEffect) {
         super(bodyParts, type, name, startingTime, duration, calorieEffect, energyEffect);
     }
 
@@ -13,15 +13,14 @@ public class PhysicalActivityModel extends ActivityModel {
     }
 
 
-    public int changeEnergy(int totalEnergy, double duration, int energyEffect) {
-        totalEnergy = (int) (totalEnergy - (duration*energyEffect*100));
+    public int changeEnergy(int totalEnergy, int energyEffect) {
+        totalEnergy = (int) (totalEnergy + energyEffect);
 
         return totalEnergy;
     }
 
-    public String changeHealth (int healthValue, double duration, int energyEffect) {
+    public String changeHealth (int healthValue) {
         String healthStatus = "";
-        healthValue = (int) (healthValue - duration * energyEffect);
 
         if(healthValue >= 100)
             healthStatus = "Healthy";
@@ -37,8 +36,8 @@ public class PhysicalActivityModel extends ActivityModel {
         return healthStatus;
     }
 
-    @Override
-    public int changeCalorie(int totalCalorie, int calorieEffect) {
-        return super.changeCalorie(totalCalorie, calorieEffect);
+    public int changeHealthValue (int healthValue, double duration, int energyEffect) {
+        healthValue = (int) (healthValue - duration * energyEffect);
+        return healthValue;
     }
 }

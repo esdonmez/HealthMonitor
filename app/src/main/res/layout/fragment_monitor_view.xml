@@ -78,6 +78,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:id="@+id/energy"
                         android:text="Energy : "/>
 
                 </RelativeLayout>
@@ -107,6 +108,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/brain"
                         android:text="Brain : "/>
 
                 </RelativeLayout>
@@ -119,7 +121,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Right Leg : "/>
+                        android:id="@+id/legs"
+                        android:text="Legs : "/>
 
                 </RelativeLayout>
 
@@ -131,7 +134,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Left Leg"/>
+                        android:id="@+id/heart"
+                        android:text="Heart"/>
 
                 </RelativeLayout>
 
@@ -152,6 +156,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/eyes"
                         android:text="Eyes : "/>
 
                 </RelativeLayout>
@@ -164,19 +169,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Right Arm : "/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Left Arm : "/>
+                        android:id="@+id/arms"
+                        android:text="Arms : "/>
 
                 </RelativeLayout>
 
